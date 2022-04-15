@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    background-color: rgba( 0, 0, 0 , 0.30);
+    backdrop-filter: blur(8px);
+    position: absolute;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 30px;
+    color: brown;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.favorites {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: brown;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    color: #f0f0f0;
+    transition: all 0.5s;
+}
+
+.favorites:hover {
+    background-color: rgb(143, 27, 27);
+}
