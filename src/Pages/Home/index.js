@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './home.css';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 export default function Home(){
     const [ films, setFilms ] = useState([]);
@@ -24,7 +25,7 @@ export default function Home(){
               <article key={film.id}>
                 <strong>{film.nome}</strong>
                 <img src={film.foto} alt={film.nome}/>
-                <a href={`/filme/${film.id}`}>View</a>
+                <Link to={`/filme/${film.id}`}>View</Link>
               </article>
             )
           })}

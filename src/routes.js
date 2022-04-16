@@ -1,24 +1,24 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './Components/Header';
-import notFound from './Pages/NotFound';
+import Errornotfound from './Pages/NotFound';
 
 import Home from './Pages/Home';
 import Filme from './Pages/Filme';
 import Favorites from './Pages/Favorites';
 
-const Routes = () => {
+const Rotas = () => {
     return(
         <BrowserRouter>
          <Header />
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/filme/:id' component={Filme} />
-                <Route exact path='/favorites' component={Favorites} />
-                <Route path='*' component={notFound} />
-            </Switch>
+            <Routes>
+                <Route exact path='/' element={<Home />} />
+                <Route exact path='/filme/:id' element={<Filme/>} />
+                <Route exact path='/favorites' element={<Favorites/>} />
+                <Route path='*' element={<Errornotfound />} />
+            </Routes>
         </BrowserRouter>
     )
 }
 
-export default Routes;
+export default Rotas;

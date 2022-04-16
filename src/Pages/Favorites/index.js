@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './favorites.css';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 export default function Favorites(){
 
@@ -35,7 +36,7 @@ export default function Favorites(){
                             <span>{i.nome}</span>
 
                             <div>
-                                <a href={`/filme/${i.id}`}>See more</a>
+                                <Link to={`/filme/${i.id}`}>See more</Link>
                                 <button onClick={ () => handleDelete(i.id) }>Remove</button>
                             </div>
                         </li>

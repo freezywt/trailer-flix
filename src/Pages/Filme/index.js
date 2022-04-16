@@ -1,23 +1,23 @@
 import { useEffect, useState } from 'react';
 import './film-info.css';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 import { toast } from 'react-toastify';
 
 export default function Filme(){
 
     const { id } = useParams();
-    const history = useHistory();
 
     const [ film, setFilm ] = useState([]);
     const [ loading, setLoading ] = useState(true);
+    let navigate = useNavigate();
 
     useEffect(() => {
 
         async function loadFilm(){
             const response = await api.get(`r-api/?api=filmes/${id}`);
             if(response.data.length === 0){
-                history.replace('/');
+                navigate('/');
                 return;
             }
             
@@ -30,7 +30,7 @@ export default function Filme(){
         return () => {
             console.log('Component umonted ツ');
         }
-    }, [history, id])
+    }, [navigate , id])
 
     function saveFilm(){
 
